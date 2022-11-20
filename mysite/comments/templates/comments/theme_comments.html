@@ -1,12 +1,12 @@
 <body>
     {% if theme %}
-        {% for cell in theme.cells %}
+        {% for cell in theme.cells.all %}
             <fieldset>
                 <p>{{ cell.publisher_name }} {{cell.pub_date}}</p>
                 <p>{{cell.comment_text}}</p>
             </fieldset>
         {% endfor %}
-    {else}
+    {%else%}
         <p>No comment</p>
     {% endif %}
 </body>

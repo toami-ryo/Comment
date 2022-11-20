@@ -7,4 +7,4 @@ from .models import Cell, Theme
 class ThemeAdmin(admin.ModelAdmin):
     fields = ['pub_date', 'title']
 
-admin.site.register(Theme)
+admin.site.register(Theme, ThemeAdmin)

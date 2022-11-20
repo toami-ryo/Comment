@@ -28,11 +28,10 @@ class Theme(models.Model):
 
 # Cell : Cells of comment contents
 class Cell(models.Model):
-    theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
+    theme = models.ForeignKey(Theme, related_name='cells', on_delete=models.CASCADE)
     
     publisher_name = models.CharField(max_length=20)
     comment_text = models.TextField(max_length=200)
     pub_date = models.DateTimeField('date published')
 
-    def __str__(self):
-        return self.pub_date
+    
