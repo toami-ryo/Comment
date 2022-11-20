@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='cell',
             name='theme',
-            field=models.ForeignKey(default='theme', on_delete=django.db.models.deletion.CASCADE, related_name='cells', to='comments.theme'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='cells', to='comments.theme'),
             preserve_default=False,
         ),
     ]
