@@ -9,4 +9,5 @@ app_name = 'comments'
 urlpatterns = [
     # ex: /comments/
     path('', views.IndexView.as_view(), name='index'),
+    path('<int:pk>/', views.CommentsView.as_view(), name='comments')
 ]
