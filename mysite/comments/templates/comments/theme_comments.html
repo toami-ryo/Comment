@@ -1,10 +1,10 @@
-{% extends "comments/header.html" %}
+{% extends "comments/basic.html" %}
 
 {% block content %}
 
   {% if theme %}
       {% for cell in theme.cells.all %}
-          <fieldset>
+          <fieldset class="cell">
               <p>{{ cell.publisher_name }} {{cell.pub_date}}</p>
               <p>{{cell.comment_text}}</p>
           </fieldset>
