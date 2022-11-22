@@ -6,6 +6,18 @@
   overflow-wrap: anywhere;
 }
 
+.cell-pub-name{
+  font-weight: bold;
+}
+
+.cell-pub-date{
+  color: gray;
+}
+
+.cell-comment{
+  margin-top: 25px;
+}
+
 .comment-form{
   padding-top: 30px;
   padding-bottom: 50px;
