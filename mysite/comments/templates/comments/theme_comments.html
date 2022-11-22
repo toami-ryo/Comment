@@ -5,7 +5,7 @@
   {% if theme %}
       {% for cell in theme.cells.all %}
           <fieldset class="cell">
-              <p>{{cell.pub_date}}  :  {{ cell.publisher_name }}</p>
+              <p>{{ cell.publisher_name }}  :  {{cell.pub_date}}</p>
               <p>{{cell.comment_text}}</p>
           </fieldset>
       {% endfor %}
