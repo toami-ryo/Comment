@@ -1,0 +1,12 @@
+.cell{
+  width: 90%;
+}
+
+.cell p{
+  overflow-wrap: anywhere;
+}
+
+.comment-form{
+  padding-top: 30px;
+  padding-bottom: 50px;
+}

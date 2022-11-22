@@ -14,4 +14,10 @@
       <p>No themes are published.</p>
   {% endif %}
 
+  <div class="theme-form">
+    <form action="{% url 'comments:theme-contribution' %}">
+      <button type="submit">テーマ追加</button>
+    </form>
+  </div>
+
 {% endblock %}

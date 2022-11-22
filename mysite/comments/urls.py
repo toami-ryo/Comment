@@ -10,5 +10,7 @@ urlpatterns = [
     # ex: /comments/
     path('', views.IndexView.as_view(), name='index'),
     path('<int:theme_id>/', views.CommentsView, name='comments'),
-    path('<int:theme_id>/contribute/', views.contribute, name='contribute')
+    path('<int:theme_id>/contribute/', views.comment_contribute, name='comment-contribute'),
+    path('theme-contribution/', views.ThemeContributionView, name='theme-contribution'),
+    path('theme-contribution/contribute/', views.theme_contribute, name='theme-contribute'),
 ]

@@ -47,10 +47,3 @@ header{
   align-items: center;
 }
 
-.cell{
-  width: 90%;
-}
-
-.cell p{
-  overflow-wrap: anywhere;
-}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Cell, Theme
-from .forms import ContributeForm
+from .forms import CommentContributeForm, ThemeContributeForm
 from django.http import HttpResponse
 from datetime import datetime
 
@@ -21,14 +21,18 @@ def CommentsView(request, theme_id):
     theme = get_object_or_404(Theme, pk = theme_id)
 
     context = {'theme':theme,
-               'contribute_form':ContributeForm()}
+               'contribute_form':CommentContributeForm()}
 
     return render(request, template_name, context)
 
-def contribute(request, theme_id):
-    template_name = 'comments/theme_comments.html'
+def ThemeContributionView(request):
+    template_name = 'comments/theme_contribution.html'
+    context = {'contribute_form':ThemeContributeForm()}
+
+    return render(request, template_name, context)
+
+def comment_contribute(request, theme_id):
     theme = get_object_or_404(Theme, pk = theme_id)
-    context = {'theme':theme}
 
     publisher_name = request.POST['publisher_name']
     comment_text = request.POST['comment_text']
@@ -40,6 +44,23 @@ def contribute(request, theme_id):
     
     # フォームをクリアしながらmodelを反映させるリダイレクト
     return redirect(f'/comments/{theme_id}/')
+
+def theme_contribute(request):
+    title = request.POST['title']
+    publisher_name = request.POST['publisher_name']
+    comment_zero = request.POST['comment_zero']
+    pub_date = datetime.now()
+
+    Theme.objects.create(title=title,
+                         pub_date=pub_date)
+
+    theme = Theme.objects.order_by('-pub_date')[0]
+    Cell.objects.create(theme=theme, 
+                        publisher_name=publisher_name, 
+                        comment_text=comment_zero,
+                        pub_date=pub_date)  
+
+    return redirect(f'/comments/')
 
 
 
