@@ -5,15 +5,25 @@
       <meta charset="utf-8">
       <title>Comments</title>
       {% load static %}
-      <link rel="stylesheet" href="{% static 'comments/basic.css' %}">
+      <link rel="stylesheet" href="{% static 'comments/stylesheet/basic.css' %}">
     </head>
 
     <body>
-      <header>
-        <div class="top-nav">
-          <a href="{% url 'comments:index' %}">テーマ一覧</a>
-        </div>
-      </header>
+      <div class="header-container">
+        <header>
+          <div class="icon-container"> 
+            <a href="{% url 'comments:index' %}">
+              <img class="top-icon" src="{% static 'comments/images/small_icon.png' %}" alt="">
+              <img class="logo" src="{% static 'comments/images/Logo.png' %}" style="height: 35px;" alt="YO-TA">
+            </a>
+          </div>
+          <div class="top-nav">
+            <ul>
+              <li><a href="{% url 'comments:index' %}">テーマ一覧</a></li>
+            </ul>
+          </div>
+        </header>
+      </div>
       
       <div class="container-wrapper">
         <div class="container">
