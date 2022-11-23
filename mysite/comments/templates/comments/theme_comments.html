@@ -17,7 +17,7 @@
     {%if contribute_form%}
         <form action="{% url 'comments:comment-contribute' theme.id %}" method="post">{% csrf_token %}
             <table>{{contribute_form.as_p}}</table>
-            <button type="submit">送信</button>
+            <button type="submit">投稿</button>
         </form>
     {%else%}
         <p>No form</p>
