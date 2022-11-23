@@ -41,6 +41,10 @@ header{
 }
 
 .container{
+  background-color: lightgray;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
   width: 600px;
   display: flex;
   flex-direction: column;
