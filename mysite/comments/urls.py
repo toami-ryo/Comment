@@ -7,10 +7,14 @@ from . import views
 # つけた name はあらゆる場所で URL 文字列の変わりとして使える
 app_name = 'comments'
 urlpatterns = [
-    # ex: /comments/
+    # index
     path('', views.IndexView.as_view(), name='index'),
-    path('<int:theme_id>/', views.CommentsView, name='comments'),
-    path('<int:theme_id>/contribute/', views.comment_contribute, name='comment-contribute'),
+
+    # theme contribution
     path('theme-contribution/', views.ThemeContributionView, name='theme-contribution'),
     path('theme-contribution/contribute/', views.theme_contribute, name='theme-contribute'),
+    
+    # theme
+    path('theme/<int:theme_id>/', views.ThemeView, name='theme'),
+    path('theme/<int:theme_id>/contribute/', views.comment_contribute, name='comment-contribute'),
 ]
