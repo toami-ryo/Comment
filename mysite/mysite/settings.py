@@ -14,8 +14,6 @@ from pathlib import Path
 
 # useing django-environ
 # see https://www.taklog.info/python-django-envrion/
-import environ
-import os
 from .settings_local import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
